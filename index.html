@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliette Gramatges Martínez | Portfolio</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --accent: #2563eb;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            opacity: 0.9;
+        }
+        .contact-links {
+            margin-top: 1rem;
+        }
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .project-item {
+            margin-bottom: 1.5rem;
+        }
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+        h3 {
+            margin: 0 0 0.3rem 0;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        .date {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        ul {
+            margin: 0.5rem 0 0 1.2rem;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 0.3rem;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .skill-category h4 {
+            margin: 0 0 0.3rem 0;
+            color: var(--secondary);
+        }
+        .notice-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--secondary);
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+        .notice-box p {
+            margin: 0;
+            color: #1e40af;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        .downloads-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+        .download-btn:hover {
+            background-color: #1d4ed8;
+        }
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .curriculum-card {
+            background: var(--light);
+            padding: 1.2rem;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+        .curriculum-card h4 {
+            margin-top: 0;
+            color: var(--primary);
+            border-bottom: 1px solid #d1d5db;
+            padding-bottom: 0.4rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Juliette Gramatges Martínez</h1>
+        <p>Industrial Engineer (IT Minor) | Data Analyst & AI Solutions Builder</p>
+        <div class="contact-links">
+            <span>Santiago, Chile</span> | 
+            <a href="https://linkedin.com/in/juliette-gramatges-mart%c3%adnez-a5971b28a/?locale=en-us" target="_blank">LinkedIn</a> | 
+            <a href="mailto:julygramat94@gmail.com">Email</a> | 
+            <span>+56 9 6319 7820</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Me -->
+        <section>
+            <h2>About Me</h2>
+            <p>Industrial Engineer with an IT minor from Pontificia Universidad Católica de Chile (PUC), ranked #1 in Chile and #2 in Latin America according to the <a href="https://www.uc.cl/temas/ranking-qs/" target="_blank" style="color: var(--accent); text-decoration: none;">QS World University Rankings</a>. My background uniquely combines strong analytical rigor, enterprise systems architecture, and practical execution in data analysis, applied research, and AI-driven development. Recognized with the <strong><a href="https://dcc.ing.uc.cl/una-nueva-celebracion-y-reconocimiento-a-ayudantes-del-dcc-uc-en-marco-de-la-ceremonia-carrera-de-ayudantes-2025/" target="_blank" style="color: var(--accent); text-decoration: none;">'Joven Promesa' Award (2025)</a></strong> by the PUC Department of Computer Science (DCC) for academic excellence and leadership.</p>
+        </section>
+
+        <!-- Degree Status Section -->
+        <section>
+            <h2>Degree & Academic Tracking</h2>
+            <div class="notice-box">
+                <p>I have just graduated! All academic blocks and requirements are fully completed (verified in green), and the official degree certificate is on the way. In the meantime, you can review all completed courses and verified tracking documents below.</p>
+            </div>
+            
+            <p><strong>Degree Program:</strong> 5.5-year Master's equivalent Industrial Civil Engineering degree with a Diploma in Information Technology (Pontificia Universidad Católica de Chile)</p>
+            
+            <!-- Botones para tus 3 documentos de Google Drive -->
+            <div class="downloads-container">
+                <a href="https://drive.google.com/file/d/1bIG3foVQwocidpW6yh78XVgK-h70_QWQ/view?usp=drive_link" target="_blank" class="download-btn">📥 Ranking Certificate (PDF)</a>
+                <a href="https://drive.google.com/file/d/18yZT5EZ5SxV6EXW-HGsh_7CDxNZsxfLV/view?usp=sharing" target="_blank" class="download-btn">📥 Academic Record (PDF)</a>
+                <a href="https://drive.google.com/file/d/1zZgs5FmgPBBeadCvHvhKRuuUuKw7BZP1/view?usp=sharing" target="_blank" class="download-btn">📥 Curriculum Tracking (PDF)</a>
+            </div>
+            
+            <h3 style="margin-top: 2rem; margin-bottom: 0.5rem;">Completed Curriculum Overview</h3>
+            <div class="curriculum-grid">
+                <div class="curriculum-card">
+                    <h4>Common Core & General Base</h4>
+                    <ul>
+                        <li>Calculus I, II, III</li>
+                        <li>Linear Algebra</li>
+                        <li>Differential Equations</li>
+                        <li>Chemistry & Thermodynamics</li>
+                        <li>Electricity and Magnetism</li>
+                        <li>Probability and Statistics</li>
+                        <li>Introduction to Economics</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <h4>Major (Industrial Engineering)</h4>
+                    <ul>
+                        <li>Optimization & Optimization Methods</li>
+                        <li>Stochastic Models</li>
+                        <li>Microeconomics</li>
+                        <li>Enterprise Organization and Behavior</li>
+                        <li>Accounting and Management Control</li>
+                        <li>Applied Econometrics</li>
+                        <li>Operations Research Capstone Workshop</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <h4>Minor in Information Technology</h4>
+                    <ul>
+                        <li>Advanced Programming</li>
+                        <li>Databases</li>
+                        <li>Process Models</li>
+                        <li>Information Systems</li>
+                        <li>Knowledge, Culture, and Technology</li>
+                        <li>Research or Project</li>
+                    </ul>
+                </div>
+                <div class="curriculum-card">
+                    <h4>Specialization & Professional Title</h4>
+                    <ul>
+                        <li>IT Project Management</li>
+                        <li>IT Operations Management</li>
+                        <li>Information Strategies and Technologies</li>
+                        <li>Technologies for Business Intelligence</li>
+                        <li>Process Mining</li>
+                        <li>Finance & Marketing</li>
+                        <li>Project Evaluation Capstone</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects & Professional Experience -->
+        <section>
+            <h2>Featured Projects & Professional Experience</h2>
+            
+            <div class="project-item">
+                <h3>AI-Powered Semantic Search Chat (Thesis Project)</h3>
+                <span class="date">Developer | 03/2026 – 08/2026 (Instituto Milenio de Datos)</span>
+                <p>Developed an advanced document-processing system enabling multi-format document uploads, AI-driven text extraction (including handwritten text recognition), and semantic search query capabilities. Architected with natural-language scalability for seamless expansion.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>Business & Financial Modeling for Haproba de Uva SpA (Thesis Project)</h3>
+                <span class="date">Consultant | 03/2026 – 08/2026</span>
+                <p>Spearheaded the market entry strategy for a grape pomace flour startup targeting the Chilean salmon aquaculture sector. Structured long-term debt requirements, production capacity, new facility planning, and comprehensive multi-year expansion plans through rigorous financial and operational modeling.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>Data Analyst Intern – Banco Falabella</h3>
+                <span class="date">Data Analyst Intern | 01/2026 – 04/2026</span>
+                <p>Automated operational processes in the massive payment transfers department and developed interactive Power BI dashboards for business data monitoring and analysis.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>CRM Implementation & Process Optimization – Mohicano Jeans</h3>
+                <span class="date">Process Modeling Assistant | 01/2025 – 04/2025</span>
+                <p>Supported the implementation of HubSpot CRM for a retail enterprise, modeled key processes across physical stores and factory lines, and designed automated response flows for social media using ManyChat.</p>
+            </div>
+        </section>
+
+        <!-- Academic Leadership & Teaching -->
+        <section>
+            <h2>Academic Leadership & Teaching</h2>
+            <ul>
+                <li><strong>Part-Time Professor – PUC (DCC):</strong> 01/2026 – 07/2026. Instructor for the 'Information Systems' course.</li>
+                <li><strong>Teaching Assistant & Co-designer (Clase Ejecutiva UC):</strong> 09/2025 – 06/2026. Co-designed coursework for the 'Digital Transformation in Government' professional diploma program.</li>
+                <li><strong>Course Coordinator ('Information Systems IIC2713' - PUC):</strong> 09/2025 – 06/2026. Managed course activities, labs, and teaching assistant teams for enterprise software ecosystems.</li>
+                <li><strong>Research Assistant (PUC):</strong> 08/2025 – 12/2025. Supported database cleaning, integration, and applied statistical analysis (factor analysis and SEM).</li>
+            </ul>
+        </section>
+
+        <!-- Technical Skills -->
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <p>Python, HTML, JavaScript, PHP, Ruby, SQL, <em>among others</em>.</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Data & Software</h4>
+                    <p>Excel (Scripts), Stata, RStudio, Tableau, Power BI, GCP, SAP, Manychat, Shopify.</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Design & Tools</h4>
+                    <p>Canva, Figma, Blender, Fusion 360.</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <p>Spanish (Native), English (C1 Level - TOEIC certified 2021).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Honors -->
+        <section>
+            <h2>Awards & Honors</h2>
+            <p><strong><a href="https://dcc.ing.uc.cl/una-nueva-celebracion-y-reconocimiento-a-ayudantes-del-dcc-uc-en-marco-de-la-ceremonia-carrera-de-ayudantes-2025/" target="_blank" style="color: var(--accent); text-decoration: none;">'Joven Promesa' Award (2025)</a>:</strong> Annual and exclusive recognition awarded by the PUC Department of Computer Science (DCC) for outstanding performance as a teaching assistant and course coordinator.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Juliette Gramatges Martínez. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
