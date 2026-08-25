@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juliette Gramatges Martínez | Portfolio</title>
+    <title>Juliette Gramatges Martínez | Curriculum & Portfolio</title>
     <style>
         :root {
             --primary: #1e3a8a;
@@ -11,6 +11,8 @@
             --dark: #1f2937;
             --light: #f3f4f6;
             --accent: #2563eb;
+            --surface: #ffffff;
+            --border: #e5e7eb;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -53,7 +55,7 @@
             padding: 0 1.5rem;
         }
         section {
-            background: white;
+            background: var(--surface);
             margin-bottom: 2rem;
             padding: 2.5rem;
             border-radius: 8px;
@@ -65,29 +67,59 @@
             padding-bottom: 0.5rem;
             margin-top: 0;
         }
-        .project-item {
-            margin-bottom: 1.5rem;
+        .exp-item, .project-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
         }
-        .project-item:last-child {
+        .exp-item:last-child, .project-item:last-child {
             margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
         }
         h3 {
-            margin: 0 0 0.3rem 0;
-            font-size: 1.1rem;
+            margin: 0 0 0.2rem 0;
+            font-size: 1.2rem;
             color: var(--dark);
         }
         .date {
             font-size: 0.85rem;
             color: #6b7280;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             display: block;
         }
         ul {
-            margin: 0.5rem 0 0 1.2rem;
+            margin: 0.5rem 0 0.8rem 1.2rem;
             padding: 0;
         }
         li {
             margin-bottom: 0.3rem;
+        }
+        /* Estilo para expandir/colapsar detalles */
+        .details-content {
+            display: none;
+            margin-top: 0.8rem;
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-left: 3px solid var(--secondary);
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .expand-btn {
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+            margin-top: 0.4rem;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .expand-btn:hover {
+            text-decoration: underline;
         }
         .skills-grid {
             display: grid;
@@ -150,6 +182,23 @@
             border-bottom: 1px solid #d1d5db;
             padding-bottom: 0.4rem;
         }
+
+        /* WIDGET DE CHAT FLOTANTE */
+        #chat-widget { position: fixed; bottom: 25px; right: 25px; z-index: 1000; font-family: sans-serif; }
+        #chat-btn { background: var(--primary); color: white; border: none; border-radius: 50px; padding: 14px 22px; cursor: pointer; font-size: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.25); font-weight: bold; display: flex; align-items: center; gap: 8px; transition: transform 0.2s; }
+        #chat-btn:hover { transform: scale(1.05); background: #1d4ed8; }
+        #chat-box { display: none; width: 360px; height: 480px; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); flex-direction: column; overflow: hidden; margin-bottom: 12px; border: 1px solid var(--border); }
+        #chat-header { background: var(--primary); color: white; padding: 14px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+        #chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 14px; background: #fafafa; }
+        .message { padding: 9px 13px; border-radius: 10px; max-width: 82%; line-height: 1.4; word-break: break-word; }
+        .user-msg { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+        .ai-msg { background: #eef2ff; color: var(--dark); align-self: flex-start; border-bottom-left-radius: 2px; border: 1px solid #c7d2fe; }
+        #chat-input-area { display: flex; border-top: 1px solid var(--border); padding: 10px; background: #fff; gap: 6px; }
+        #chat-input { flex: 1; border: 1px solid var(--border); border-radius: 6px; padding: 9px; outline: none; font-size: 14px; }
+        #chat-input:focus { border-color: var(--secondary); }
+        #chat-send { background: var(--primary); color: white; border: none; padding: 9px 14px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        #chat-send:hover { background: #1d4ed8; }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -182,12 +231,11 @@
         <section>
             <h2>Degree & Academic Tracking</h2>
             <div class="notice-box">
-                <p>I have just graduated! All academic blocks and requirements are fully completed (verified in green), and the official degree certificate is on the way. In the meantime, you can review all completed courses and verified tracking documents below.</p>
+                <p>I have just graduated! All academic blocks and requirements are fully completed, and the official degree certificate is on the way. In the meantime, you can review all completed courses and verified tracking documents below.</p>
             </div>
             
             <p><strong>Degree Program:</strong> 5.5-year Master's equivalent Industrial Civil Engineering degree with a Diploma in Information Technology (Pontificia Universidad Católica de Chile)</p>
             
-            <!-- Botones para tus 3 documentos de Google Drive -->
             <div class="downloads-container">
                 <a href="https://drive.google.com/file/d/1bIG3foVQwocidpW6yh78XVgK-h70_QWQ/view?usp=drive_link" target="_blank" class="download-btn">📥 Ranking Certificate (PDF)</a>
                 <a href="https://drive.google.com/file/d/18yZT5EZ5SxV6EXW-HGsh_7CDxNZsxfLV/view?usp=sharing" target="_blank" class="download-btn">📥 Academic Record (PDF)</a>
@@ -246,44 +294,105 @@
             </div>
         </section>
 
-        <!-- Featured Projects & Professional Experience -->
+        <!-- Professional Experience & Featured Projects (Con expansión de detalles) -->
         <section>
-            <h2>Featured Projects & Professional Experience</h2>
+            <h2>Professional Experience & Featured Projects</h2>
             
             <div class="project-item">
-                <h3>AI-Powered Semantic Search Chat (Thesis Project)</h3>
-                <span class="date">Developer | 03/2026 – 08/2026 (Instituto Milenio de Datos)</span>
-                <p>Developed an advanced document-processing system enabling multi-format document uploads, AI-driven text extraction (including handwritten text recognition), and semantic search query capabilities. Architected with natural-language scalability for seamless expansion.</p>
-            </div>
-
-            <div class="project-item">
-                <h3>Business & Financial Modeling for Haproba de Uva SpA (Thesis Project)</h3>
-                <span class="date">Consultant | 03/2026 – 08/2026</span>
-                <p>Spearheaded the market entry strategy for a grape pomace flour startup targeting the Chilean salmon aquaculture sector. Structured long-term debt requirements, production capacity, new facility planning, and comprehensive multi-year expansion plans through rigorous financial and operational modeling.</p>
-            </div>
-
-            <div class="project-item">
                 <h3>Data Analyst Intern – Banco Falabella</h3>
-                <span class="date">Data Analyst Intern | 01/2026 – 04/2026</span>
-                <p>Automated operational processes in the massive payment transfers department and developed interactive Power BI dashboards for business data monitoring and analysis.</p>
+                <span class="date">01/2026 – 04/2026 | Calificación D (Destacada)</span>
+                <p>Automated operational processes in the massive payment transfers department and developed interactive Power BI dashboards for business data monitoring.</p>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles técnicos y metodologías</button>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Metodología y Ejecución:</strong> Optimización de flujos de trabajo bajo presión de presupuestos y plazos ajustados.</li>
+                        <li><strong>Herramientas:</strong> Excel Scripts, Power BI, flujos de automatización en Outlook.</li>
+                        <li><strong>Logros clave:</strong> Reducción del tiempo de cierre de cuentas manuales de 1 hora a 10 minutos mediante scripts personalizados. Automatización de planillas de facturación corporativa y correos masivos de convenios, reduciendo una jornada laboral completa de trabajo manual. Creación de pipelines de datos y dashboards dinámicos en Power BI conectados a carpetas compartidas para la gerencia.</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="project-item">
-                <h3>CRM Implementation & Process Optimization – Mohicano Jeans</h3>
-                <span class="date">Process Modeling Assistant | 01/2025 – 04/2025</span>
-                <p>Supported the implementation of HubSpot CRM for a retail enterprise, modeled key processes across physical stores and factory lines, and designed automated response flows for social media using ManyChat.</p>
+                <h3>AI-Powered Semantic Search & Knowledge Graph Platform (Thesis Project)</h3>
+                <span class="date">03/2026 – 08/2026</span>
+                <p>Advanced document-processing system enabling multi-format document uploads, AI-driven text extraction, and semantic search query capabilities.</p>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles técnicos y metodologías</button>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Arquitectura y Tecnologías:</strong> Python, FastAPI, Supabase (pgvector), Google Cloud Vision OCR, Sentence-Transformers y modelos de lenguaje avanzados.</li>
+                        <li><strong>Metodología:</strong> Ingesta multiformato (TXT, PDFs digitales y escaneados), extracción de entidades y relaciones personalizables, indexación vectorial con HNSW y visualización interactiva de redes. Procesamiento asíncrono en segundo plano para manejar alto volumen documental sin bloqueos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>Business Evaluation & Financial Modeling (Confidential Agri-Biotech Initiative)</h3>
+                <span class="date">03/2026 – 06/2026</span>
+                <p>Comprehensive project evaluation, 15-year cash flow financial modeling, risk sensitivity, and strategic flexibility analysis for a biotech startup.</p>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles técnicos y metodologías</button>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Metodología Financiera:</strong> Evaluación social y privada de proyectos, modelación de flujos de caja a 15 años, cálculo de WACC (CAPM ajustado por riesgo tecnológico TRL), análisis de sensibilidad (diagramas de tornado) y simulaciones de Monte Carlo (5,000 iteraciones).</li>
+                        <li><strong>Enfoque Estratégico:</strong> Análisis de opciones reales y flexibilidad gerencial bajo incertidumbre operacional y de mercado, estructurando escenarios de escalamiento productivo e internalización de procesos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3>Process Modeling & E-Commerce Integration – Mohicano Jeans</h3>
+                <span class="date">01/2025 – 04/2025</span>
+                <p>Rigorous process mapping and optimization using BPMN standards alongside structural integration and setup of enterprise e-commerce platforms.</p>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles técnicos y metodologías</button>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Metodologías:</strong> Levantamiento de procesos de negocio, modelamiento formal en BPMN, detección analítica de cuellos de botella ("procesos cuello de botella") y diseño de propuestas de mejora realistas y eficientes.</li>
+                        <li><strong>Herramientas y Ecosistema:</strong> Gestión integral y configuración técnica de tiendas en <strong>PrestaShop</strong> y sus conexiones con plataformas de gestión y atención al cliente.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <!-- Academic Leadership & Teaching -->
         <section>
-            <h2>Academic Leadership & Teaching</h2>
-            <ul>
-                <li><strong>Part-Time Professor – PUC (DCC):</strong> 01/2026 – 07/2026. Instructor for the 'Information Systems' course.</li>
-                <li><strong>Teaching Assistant & Co-designer (Clase Ejecutiva UC):</strong> 09/2025 – 06/2026. Co-designed coursework for the 'Digital Transformation in Government' professional diploma program.</li>
-                <li><strong>Course Coordinator ('Information Systems IIC2713' - PUC):</strong> 09/2025 – 06/2026. Managed course activities, labs, and teaching assistant teams for enterprise software ecosystems.</li>
-                <li><strong>Research Assistant (PUC):</strong> 08/2025 – 12/2025. Supported database cleaning, integration, and applied statistical analysis (factor analysis and SEM).</li>
-            </ul>
+            <h2>Academic Leadership & Research</h2>
+            
+            <div class="exp-item">
+                <h3>Part-Time Professor & Course Coordinator – PUC (DCC)</h3>
+                <span class="date">09/2025 – 07/2026</span>
+                <p>Instructor and coordinator for 'Information Systems' (initial elective of the IT specialty, covering enterprise software, process modeling, CRM, and AI roles).</p>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles y evolución</button>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Evolución Académica:</strong> Comenzó como ayudante por 4 meses, ascendió a coordinadora de sección (puente entre alumnos y profesor), y tras destacado rendimiento y trabajos independientes obtuvo el premio <strong>'Joven Promesa' (2025)</strong> otorgado por el Departamento de Ciencias de la Computación (DCC), culminando como profesora adjunta.</li>
+                        <li><strong>Logros:</strong> 99% de satisfacción de los estudiantes evaluados en el curso.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <h3>Research Assistant – Quantitative Entrepreneurship Study</h3>
+                <span class="date">08/2025 – Present (Estudio activo en curso)</span>
+                <p>Active research assistant evaluating the impact of an engineering course on students' entrepreneurial intentions using rigorous econometrics.</p>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles metodológicos</button>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Metodología y Herramientas:</strong> Desarrollo de scripts y código especializado en <strong>Stata</strong> para la depuración, homologación y limpieza de múltiples bases de datos históricas de encuestas.</li>
+                        <li><strong>Análisis Estadístico:</strong> Aplicación de análisis factorial para procesar preguntas sustanciales, remover sesgos metodológicos y aislar el impacto significativo del curso. Código base utilizado para la continuidad del estudio a nivel de magíster.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <h3>Teaching Assistant – Econometrics & Industrial Engineering</h3>
+                <span class="date">Trayectoria consolidada en la PUC</span>
+                <p>Support in advanced quantitative courses focusing on empirical statistics, regression models, and economic analysis.</p>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver herramientas utilizadas</button>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Herramientas y Modelos:</strong> Uso intensivo de <strong>R</strong> y <strong>Stata</strong> para modelos de regresión lineal múltiple, estimadores por Mínimos Cuadrados Ordinarios (MCO), inferencia estadística, pruebas de hipótesis y resolución de endogeneidad mediante variables instrumentales.</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- Technical Skills -->
@@ -291,20 +400,20 @@
             <h2>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h4>Programming Languages</h4>
-                    <p>Python, HTML, JavaScript, PHP, Ruby, SQL, <em>among others</em>.</p>
+                    <h4>Programming & Data</h4>
+                    <p>Python, FastAPI, R, Stata, SQL, HTML, JavaScript, PHP.</p>
                 </div>
                 <div class="skill-category">
-                    <h4>Data & Software</h4>
-                    <p>Excel (Scripts), Stata, RStudio, Tableau, Power BI, GCP, SAP, Manychat, Shopify.</p>
+                    <h4>Business & Analytics</h4>
+                    <p>Power BI, Tableau, PrestaShop, Excel Scripts, Supabase (pgvector), BPMN Process Modeling.</p>
                 </div>
                 <div class="skill-category">
-                    <h4>Design & Tools</h4>
-                    <p>Canva, Figma, Blender, Fusion 360.</p>
+                    <h4>Design & Engineering</h4>
+                    <p>Figma, Canva, Blender, Fusion 360.</p>
                 </div>
                 <div class="skill-category">
                     <h4>Languages</h4>
-                    <p>Spanish (Native), English (C1 Level - TOEIC certified 2021).</p>
+                    <p>Spanish (Native), English (C1 Level - TOEIC certified).</p>
                 </div>
             </div>
         </section>
@@ -312,13 +421,93 @@
         <!-- Awards & Honors -->
         <section>
             <h2>Awards & Honors</h2>
-            <p><strong><a href="https://dcc.ing.uc.cl/una-nueva-celebracion-y-reconocimiento-a-ayudantes-del-dcc-uc-en-marco-de-la-ceremonia-carrera-de-ayudantes-2025/" target="_blank" style="color: var(--accent); text-decoration: none;">'Joven Promesa' Award (2025)</a>:</strong> Annual and exclusive recognition awarded by the PUC Department of Computer Science (DCC) for outstanding performance as a teaching assistant and course coordinator.</p>
+            <p><strong><a href="https://dcc.ing.uc.cl/una-nueva-celebracion-y-reconocimiento-a-ayudantes-del-dcc-uc-en-marco-de-la-ceremonia-carrera-de-ayudantes-2025/" target="_blank" style="color: var(--accent); text-decoration: none;">'Joven Promesa' Award (2025)</a>:</strong> Exclusive recognition awarded by the PUC Department of Computer Science (DCC) for outstanding performance, academic leadership, and dedication as a teaching assistant and coordinator.</p>
         </section>
     </main>
+
+    <!-- WIDGET DE CHAT INTEGRADO CON TU IA -->
+    <div id="chat-widget">
+        <div id="chat-box">
+            <div id="chat-header">
+                <span>Asistente IA de Juliette</span>
+                <span onclick="toggleChat()" style="cursor: pointer; font-size: 18px;">&times;</span>
+            </div>
+            <div id="chat-messages">
+                <div class="message ai-msg">¡Hola! Soy el asistente virtual de Juliette. Pregúntame sobre su experiencia, código en Stata, proyectos o trayectoria docente.</div>
+            </div>
+            <div id="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Escribe tu consulta..." onkeypress="handleKeyPress(event)">
+                <button id="chat-send" onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+        <button id="chat-btn" onclick="toggleChat()">💬 Chatea con mi IA</button>
+    </div>
+
+    <script>
+        // Función para expandir/colapsar los detalles técnicos de cada experiencia
+        function toggleDetails(button) {
+            const content = button.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                button.innerHTML = "➕ Ver detalles técnicos y metodologías";
+            } else {
+                content.style.display = "block";
+                button.innerHTML = "➖ Ocultar detalles";
+            }
+        }
+
+        // Funciones del Chat IA Flotante
+        function toggleChat() {
+            const box = document.getElementById('chat-box');
+            box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
+            if (box.style.display === 'flex') {
+                document.getElementById('chat-input').focus();
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messagesContainer = document.getElementById('chat-messages');
+            const text = input.value.trim();
+            
+            if (!text) return;
+
+            messagesContainer.innerHTML += `<div class="message user-msg">${text}</div>`;
+            input.value = '';
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            // URL del backend (ajustar cuando subas tu backend a Render/Railway)
+            const backendUrl = 'http://localhost:8000/api/chat';
+
+            try {
+                const response = await fetch(backendUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text })
+                });
+
+                const data = await response.json();
+                const aiReply = data.reply || "Lo siento, hubo un error al procesar tu respuesta.";
+
+                messagesContainer.innerHTML += `<div class="message ai-msg">${aiReply}</div>`;
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            } catch (error) {
+                messagesContainer.innerHTML += `<div class="message ai-msg">Asegúrate de tener tu backend local encendido para chatear con la IA.</div>`;
+                console.error("Error:", error);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+    </script>
 
     <footer>
         <p>&copy; 2026 Juliette Gramatges Martínez. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
