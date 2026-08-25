@@ -1,25 +1,29 @@
 import os
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from google import genai
 
 app = FastAPI()
 
-# Permite que tu portfolio web se comunique con el backend sin bloqueos de CORS
+# =========================================================================
+# SEGURIDAD CORS: Reemplaza "https://tu-usuario.github.io" con la URL real 
+# de tu portfolio en GitHub Pages para bloquear accesos no autorizados.
+# =========================================================================
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # En producción puedes restringirlo a la URL exacta de tu GitHub Pages
+    allow_origins=["https://tu-usuario.github.io"],  # <-- ¡Actualiza con tu URL real de GitHub Pages!
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["POST", "GET"],
     allow_headers=["*"],
 )
 
-# Inicializa el cliente de Google Gen AI usando la variable de entorno GEMINI_API_KEY
+# Inicializa el cliente de Google Gen AI usando la variable de entorno segura
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
 class ChatRequest(BaseModel):
-    message: str
+    # Blindaje de seguridad: límite máximo de 300 caracteres por mensaje para evitar spam
+    message: str = Field(..., max_length=300)
 
 # Memoria y perfil completo con la información validada, confidencialidad y enfoque profesional
 SYSTEM_PROMPT = """
@@ -47,24 +51,28 @@ Debes responder de manera profesional, amable y concisa a reclutadores, visitant
 
 - **Proyectos Destacados:**
   - **Plataforma de Búsqueda Semántica y Grafos (IMFD):** Proyecto de título enfocado en la construcción de un buscador semántico avanzado con ingesta multiformato, OCR adaptativo, extracción automatizada de entidades y relaciones, e indexación vectorial en base de datos.
-  - **Evaluación de Iniciativa Biotecnológica Agroindustrial (Confidencial):** Modelación financiera a 15 años, flujos de caja, análisis de sensibilidad (tornado), simulaciones de Monte Carlo y análisis de flexibilidad estratégica bajo incertidumbre para startup biotecnológica de economía circular[cite: 2].
+  - **Evaluación de Iniciativa Biotecnológica Agroindustrial (Confidencial):** Modelación financiera a 15 años, flujos de caja, análisis de sensibilidad (tornado), simulaciones de Monte Carlo y análisis de flexibilidad estratégica bajo incertidumbre para startup biotecnológica de economía circular.
 
 Instrucción de comportamiento: Si te preguntan por su experiencia, código en Stata, PrestaShop, BPMN, rol docente, hobbies o proyectos confidenciales, responde de forma directa, certera y basada estrictamente en este perfil. Si te consultan por temas ajenos, redirige amablemente la conversación hacia su faceta en ingeniería, IA y tecnología.
 """
 
 @app.post("/api/chat")
 async def chat_with_ai(request: ChatRequest):
+    cleaned_message = request.message.strip()
+    if not cleaned_message:
+        raise HTTPException(status_code=400, detail="El mensaje no puede estar vacío.")
+    
     try:
         response = client.models.generate_content(
             model='gemini-2.5-flash',
-            contents=request.message,
+            contents=cleaned_message,
             config={
                 'system_instruction': SYSTEM_PROMPT
             }
         )
         return {"reply": response.text}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail="Error interno al procesar la solicitud.")
 
 @app.get("/health")
 def health_check():
