@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,7 +95,7 @@
         li {
             margin-bottom: 0.3rem;
         }
-        /* Estilo para expandir/colapsar detalles */
+        /* Style to expand/collapse details */
         .details-content {
             display: none;
             margin-top: 0.8rem;
@@ -183,7 +183,7 @@
             padding-bottom: 0.4rem;
         }
 
-        /* Estilos para las preguntas rápidas (chips) */
+        /* Styles for suggestion chips */
         .suggestion-chips {
             display: flex;
             flex-direction: column;
@@ -208,7 +208,7 @@
             border-color: var(--primary);
         }
 
-        /* WIDGET DE CHAT FLOTANTE */
+        /* FLOATING CHAT WIDGET */
         #chat-widget { position: fixed; bottom: 25px; right: 25px; z-index: 1000; font-family: sans-serif; }
         #chat-btn { background: var(--primary); color: white; border: none; border-radius: 50px; padding: 14px 22px; cursor: pointer; font-size: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.25); font-weight: bold; display: flex; align-items: center; gap: 8px; transition: transform 0.2s; }
         #chat-btn:hover { transform: scale(1.05); background: #1d4ed8; }
@@ -319,20 +319,20 @@
             </div>
         </section>
 
-        <!-- Professional Experience & Featured Projects (Con expansión de detalles) -->
+        <!-- Professional Experience & Featured Projects -->
         <section>
             <h2>Professional Experience & Featured Projects</h2>
             
             <div class="project-item">
                 <h3>Data Analyst Intern – Banco Falabella</h3>
-                <span class="date">01/2026 – 04/2026 | Calificación D (Destacada)</span>
+                <span class="date">01/2026 – 04/2026 | Grade D (Outstanding)</span>
                 <p>Automated operational processes in the massive payment transfers department and developed interactive Power BI dashboards for business data monitoring.</p>
-                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles técnicos y metodologías</button>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ View technical details & methodologies</button>
                 <div class="details-content">
                     <ul>
-                        <li><strong>Metodología y Ejecución:</strong> Optimización de flujos de trabajo bajo presión de presupuestos y plazos ajustados.</li>
-                        <li><strong>Herramientas:</strong> Excel Scripts, Power BI, flujos de automatización en Outlook.</li>
-                        <li><strong>Logros clave:</strong> Reducción del tiempo de cierre de cuentas manuales de 1 hora a 10 minutos mediante scripts personalizados. Automatización de planillas de facturación corporativa y correos masivos de convenios, reduciendo una jornada laboral completa de trabajo manual. Creación de pipelines de datos y dashboards dinámicos en Power BI conectados a carpetas compartidas para la gerencia.</li>
+                        <li><strong>Methodology & Execution:</strong> Workflow optimization under tight budget and deadline pressures.</li>
+                        <li><strong>Tools:</strong> Excel Scripts, Power BI, Outlook automated workflows.</li>
+                        <li><strong>Key Achievements:</strong> Reduced manual account-closing time from 1 hour to 10 minutes via custom scripts. Automated corporate billing sheets and mass agreement emails, saving a full workday of manual labor. Built data pipelines and dynamic Power BI dashboards connected to shared management folders.</li>
                     </ul>
                 </div>
             </div>
@@ -341,11 +341,11 @@
                 <h3>AI-Powered Semantic Search & Knowledge Graph Platform (Thesis Project)</h3>
                 <span class="date">03/2026 – 08/2026</span>
                 <p>Advanced document-processing system enabling multi-format document uploads, AI-driven text extraction, and semantic search query capabilities.</p>
-                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles técnicos y metodologías</button>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ View technical details & methodologies</button>
                 <div class="details-content">
                     <ul>
-                        <li><strong>Arquitectura y Tecnologías:</strong> Python, FastAPI, Supabase (pgvector), Google Cloud Vision OCR, Sentence-Transformers y modelos de lenguaje avanzados.</li>
-                        <li><strong>Metodología:</strong> Ingesta multiformato (TXT, PDFs digitales y escaneados), extracción de entidades y relaciones personalizables, indexación vectorial con HNSW y visualización interactiva de redes. Procesamiento asíncrono en segundo plano para manejar alto volumen documental sin bloqueos.</li>
+                        <li><strong>Architecture & Technologies:</strong> Python, FastAPI, Supabase (pgvector), Google Cloud Vision OCR, Sentence-Transformers, and advanced LLMs.</li>
+                        <li><strong>Methodology:</strong> Multi-format ingestion (TXT, digital & scanned PDFs), customizable entity-relationship extraction, vector indexing with HNSW, and interactive network visualization. Asynchronous background processing to handle high document volume without blocking.</li>
                     </ul>
                 </div>
             </div>
@@ -354,11 +354,11 @@
                 <h3>Business Evaluation & Financial Modeling (Confidential Agri-Biotech Initiative)</h3>
                 <span class="date">03/2026 – 06/2026</span>
                 <p>Comprehensive project evaluation, 15-year cash flow financial modeling, risk sensitivity, and strategic flexibility analysis for a biotech startup.</p>
-                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles técnicos y metodologías</button>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ View technical details & methodologies</button>
                 <div class="details-content">
                     <ul>
-                        <li><strong>Metodología Financiera:</strong> Evaluación social y privada de proyectos, modelación de flujos de caja a 15 años, cálculo de WACC (CAPM ajustado por riesgo tecnológico TRL), análisis de sensibilidad (diagramas de tornado) y simulaciones de Monte Carlo (5,000 iteraciones).</li>
-                        <li><strong>Enfoque Estratégico:</strong> Análisis de opciones reales y flexibilidad gerencial bajo incertidumbre operacional y de mercado, estructurando escenarios de escalamiento productivo e internalización de procesos.</li>
+                        <li><strong>Financial Methodology:</strong> Social and private project evaluation, 15-year cash flow modeling, WACC calculation (CAPM adjusted for TRL tech risk), sensitivity analysis (tornado diagrams), and Monte Carlo simulations (5,000 iterations).</li>
+                        <li><strong>Strategic Focus:</strong> Real options analysis and managerial flexibility under operational and market uncertainty, structuring product scaling and process internalization scenarios.</li>
                     </ul>
                 </div>
             </div>
@@ -367,11 +367,11 @@
                 <h3>Process Modeling & E-Commerce Integration – Mohicano Jeans</h3>
                 <span class="date">01/2025 – 04/2025</span>
                 <p>Rigorous process mapping and optimization using BPMN standards alongside structural integration and setup of enterprise e-commerce platforms.</p>
-                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles técnicos y metodologías</button>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ View technical details & methodologies</button>
                 <div class="details-content">
                     <ul>
-                        <li><strong>Metodologías:</strong> Levantamiento de procesos de negocio, modelamiento formal en BPMN, detección analítica de cuellos de botella ("procesos cuello de botella") y diseño de propuestas de mejora realistas y eficientes.</li>
-                        <li><strong>Herramientas y Ecosistema:</strong> Gestión integral y configuración técnica de tiendas en <strong>PrestaShop</strong> y sus conexiones con plataformas de gestión y atención al cliente.</li>
+                        <li><strong>Methodologies:</strong> Business process elicitation, formal BPMN modeling, analytical bottleneck detection ("bottleneck processes"), and design of realistic, efficient improvement proposals.</li>
+                        <li><strong>Tools & Ecosystem:</strong> Comprehensive management and technical setup of <strong>PrestaShop</strong> stores and their integrations with customer service and management systems.</li>
                     </ul>
                 </div>
             </div>
@@ -385,36 +385,36 @@
                 <h3>Part-Time Professor & Course Coordinator – PUC (DCC)</h3>
                 <span class="date">09/2025 – 07/2026</span>
                 <p>Instructor and coordinator for 'Information Systems' (initial elective of the IT specialty, covering enterprise software, process modeling, CRM, and AI roles).</p>
-                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles y evolución</button>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ View details & evolution</button>
                 <div class="details-content">
                     <ul>
-                        <li><strong>Evolución Académica:</strong> Comenzó como ayudante por 4 meses, ascendió a coordinadora de sección (puente entre alumnos y profesor), y tras destacado rendimiento y trabajos independientes obtuvo el premio <strong>'Joven Promesa' (2025)</strong> otorgado por el Departamento de Ciencias de la Computación (DCC), culminando como profesora adjunta.</li>
-                        <li><strong>Logros:</strong> 99% de satisfacción de los estudiantes evaluados en el curso.</li>
+                        <li><strong>Academic Evolution:</strong> Started as a teaching assistant for 4 months, promoted to section coordinator (liaison between students and professor), and following outstanding performance and independent work received the <strong>'Joven Promesa' (Young Promise) Award (2025)</strong> from the Computer Science Department (DCC), culminating as an adjunct professor.</li>
+                        <li><strong>Achievements:</strong> 99% student satisfaction rate in course evaluations.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="exp-item">
                 <h3>Research Assistant – Quantitative Entrepreneurship Study</h3>
-                <span class="date">08/2025 – Present (Estudio activo en curso)</span>
+                <span class="date">08/2025 – Present (Active ongoing study)</span>
                 <p>Active research assistant evaluating the impact of an engineering course on students' entrepreneurial intentions using rigorous econometrics.</p>
-                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver detalles metodológicos</button>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ View methodological details</button>
                 <div class="details-content">
                     <ul>
-                        <li><strong>Metodología y Herramientas:</strong> Desarrollo de scripts y código especializado en <strong>Stata</strong> para la depuración, homologación y limpieza de múltiples bases de datos históricas de encuestas.</li>
-                        <li><strong>Análisis Estadístico:</strong> Aplicación de análisis factorial para procesar preguntas sustanciales, remover sesgos metodológicos y aislar el impacto significativo del curso. Código base utilizado para la continuidad del estudio a nivel de magíster.</li>
+                        <li><strong>Methodology & Tools:</strong> Development of specialized scripts and code in <strong>Stata</strong> for cleaning, standardizing, and processing multiple historical survey databases.</li>
+                        <li><strong>Statistical Analysis:</strong> Application of factor analysis to process substantive questions, remove methodological biases, and isolate the significant impact of the course. Base code utilized for Master's continuation.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="exp-item">
                 <h3>Teaching Assistant – Econometrics & Industrial Engineering</h3>
-                <span class="date">Trayectoria consolidada en la PUC</span>
+                <span class="date">Consolidated Track Record at PUC</span>
                 <p>Support in advanced quantitative courses focusing on empirical statistics, regression models, and economic analysis.</p>
-                <button class="expand-btn" onclick="toggleDetails(this)">➕ Ver herramientas utilizadas</button>
+                <button class="expand-btn" onclick="toggleDetails(this)">➕ View tools used</button>
                 <div class="details-content">
                     <ul>
-                        <li><strong>Herramientas y Modelos:</strong> Uso intensivo de <strong>R</strong> y <strong>Stata</strong> para modelos de regresión lineal múltiple, estimadores por Mínimos Cuadrados Ordinarios (MCO), inferencia estadística, pruebas de hipótesis y resolución de endogeneidad mediante variables instrumentales.</li>
+                        <li><strong>Tools & Models:</strong> Intensive use of <strong>R</strong> and <strong>Stata</strong> for multiple linear regression models, Ordinary Least Squares (OLS) estimators, statistical inference, hypothesis testing, and endogeneity resolution using instrumental variables.</li>
                     </ul>
                 </div>
             </div>
@@ -450,49 +450,49 @@
         </section>
     </main>
 
-<!-- WIDGET DE CHAT INTEGRADO CON TU IA -->
+    <!-- AI CHAT WIDGET -->
     <div id="chat-widget">
         <div id="chat-box">
             <div id="chat-header">
-                <span>Asistente IA de Juliette</span>
+                <span>Juliette's AI Assistant</span>
                 <span onclick="toggleChat()" style="cursor: pointer; font-size: 18px;">&times;</span>
             </div>
             <div id="chat-messages">
                 <div class="message ai-msg">
-                    ¡Hola! Soy el asistente virtual de Juliette. Pregúntame sobre su experiencia, proyectos, trayectoria docente o incluso su vida personal e intereses. 
-                    <br><br>💡 O haz clic en una de estas preguntas rápidas para comenzar:
+                    Hello! I'm Juliette's virtual assistant. Ask me about her experience, projects, teaching background, or personal interests.
+                    <br><br>💡 Or click one of these quick questions to get started:
                 </div>
-                <!-- Preguntas sugeridas por defecto -->
+                <!-- Default suggestion chips in English -->
                 <div class="suggestion-chips">
-                    <button class="chip" onclick="sendPresetMessage('Dame un resumen completo de su CV y perfil profesional.')">📄 Resumen del CV</button>
-                    <button class="chip" onclick="sendPresetMessage('¿Cuál es el nivel académico de Juliette, su título, mención y notas?')">🎓 Nivel académico y notas</button>
-                    <button class="chip" onclick="sendPresetMessage('¿Cuál es su experiencia en datos y con IA?')">🤖 Experiencia en Datos e IA</button>
-                    <button class="chip" onclick="sendPresetMessage('¿Qué premios y trayectoria académica tiene en la PUC?')">🏆 Trayectoria en la PUC</button>
-                    <button class="chip" onclick="sendPresetMessage('¿Cuáles son sus hobbies e intereses personales?')">🎨 Hobbies e Intereses</button>
+                    <button class="chip" onclick="sendPresetMessage('Give me a complete summary of her CV and professional profile.')">📄 CV Summary</button>
+                    <button class="chip" onclick="sendPresetMessage('What is Juliette\'s academic level, degree, major, and GPA?')">🎓 Academic Level & GPA</button>
+                    <button class="chip" onclick="sendPresetMessage('What is her experience in data analytics and AI?')">🤖 Data & AI Experience</button>
+                    <button class="chip" onclick="sendPresetMessage('What awards and academic background does she have at PUC?')">🏆 PUC Track Record</button>
+                    <button class="chip" onclick="sendPresetMessage('What are her personal hobbies and interests?')">🎨 Hobbies & Interests</button>
                 </div>
             </div>
             <div id="chat-input-area">
-                <input type="text" id="chat-input" placeholder="Escribe tu consulta..." maxlength="300" onkeypress="handleKeyPress(event)">
-                <button id="chat-send" onclick="sendMessage()">Enviar</button>
+                <input type="text" id="chat-input" placeholder="Type your query..." maxlength="300" onkeypress="handleKeyPress(event)">
+                <button id="chat-send" onclick="sendMessage()">Send</button>
             </div>
         </div>
-        <button id="chat-btn" onclick="toggleChat()">💬 Chatea con mi IA</button>
+        <button id="chat-btn" onclick="toggleChat()">💬 Chat with my AI</button>
     </div>
 
     <script>
-        // Función para expandir/colapsar los detalles técnicos de cada experiencia
+        // Function to expand/collapse technical details
         function toggleDetails(button) {
             const content = button.nextElementSibling;
             if (content.style.display === "block") {
                 content.style.display = "none";
-                button.innerHTML = "➕ Ver detalles técnicos y metodologías";
+                button.innerHTML = "➕ View technical details & methodologies";
             } else {
                 content.style.display = "block";
-                button.innerHTML = "➖ Ocultar detalles";
+                button.innerHTML = "➖ Hide details";
             }
         }
 
-        // Funciones del Chat IA Flotante
+        // Floating AI Chat functions
         function toggleChat() {
             const box = document.getElementById('chat-box');
             box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
@@ -507,6 +507,12 @@
             }
         }
 
+        // Function for preset suggestion chips
+        function sendPresetMessage(text) {
+            document.getElementById('chat-input').value = text;
+            sendMessage();
+        }
+
         async function sendMessage() {
             const input = document.getElementById('chat-input');
             const messagesContainer = document.getElementById('chat-messages');
@@ -518,8 +524,8 @@
             input.value = '';
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
-            // ⚠️ REEMPLAZA ESTA URL CON TU URL REAL DE GOOGLE CLOUD RUN
-            const backendUrl = 'https://portfolio-backend-1086278946922.us-central1.run.app';
+            // ⚠️ YOUR GOOGLE CLOUD RUN BACKEND URL (with /api/chat)
+            const backendUrl = 'https://portfolio-backend-1086278946922.us-central1.run.app/api/chat';
 
             try {
                 const response = await fetch(backendUrl, {
@@ -529,13 +535,13 @@
                 });
 
                 const data = await response.json();
-                const aiReply = data.reply || "Lo siento, hubo un error al procesar tu respuesta.";
+                const aiReply = data.reply || "Sorry, an error occurred while processing your response.";
 
                 messagesContainer.innerHTML += `<div class="message ai-msg">${aiReply}</div>`;
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
             } catch (error) {
-                messagesContainer.innerHTML += `<div class="message ai-msg">Error de conexión con el servidor de IA.</div>`;
+                messagesContainer.innerHTML += `<div class="message ai-msg">Connection error with the AI server.</div>`;
                 console.error("Error:", error);
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
             }
