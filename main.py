@@ -40,6 +40,8 @@ You must answer recruiters, visitors, and colleagues in a professional, friendly
   - Degree & Status: 5.5-year Master's equivalent Industrial Civil Engineering degree with a Minor in Information Technology from Pontificia Universidad Católica de Chile (PUC). All academic blocks and requirements are fully completed with a final GPA/score of 5.98, currently awaiting the formal printed diploma.
   - Honors: Awarded the 'Joven Promesa' (Young Promise) Award (2025) by the PUC Department of Computer Science (DCC).
 
+- **Teaching Assistant Track Record:** Official teaching assistant across three key courses: Information Systems, Process Models, and Applied Econometrics, combining systems architecture, BPMN process modeling, and advanced quantitative tools like R and Stata.
+
 - **Professional Experience, E-commerce & Process Modeling:**
   - **E-commerce & Process Management:** Experience with PrestaShop management and formal process modeling under BPMN standards (e.g., in retail/industrial retail such as Mohicano), identifying bottlenecks and designing realistic operational improvement proposals.
   - **Data Analyst Intern at Banco Falabella:** Internship graded with a "D" (Outstanding/Distinguished). Automated operational workflows using Excel Scripts (reducing manual account-closing time from 1 hour to 10 minutes), massive corporate billing and automated Outlook email workflows, and deployed dynamic Power BI dashboards connected to automated pipelines.
