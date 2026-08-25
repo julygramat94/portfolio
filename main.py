@@ -65,17 +65,20 @@ async def chat_with_ai(request: ChatRequest):
         raise HTTPException(status_code=400, detail="Message cannot be empty.")
     
     try:
+        # Forma directa, limpia y compatible con la nueva SDK de google-genai
         response = client.models.generate_content(
             model='gemini-2.5-flash',
             contents=cleaned_message,
             config={
-                'system_instruction': SYSTEM_PROMPT
+                'system_instruction': SYSTEM_PROMPT,
+                'temperature': 0.3 # Respuestas más precisas y ceñidas al perfil
             }
         )
         return {"reply": response.text}
     except Exception as e:
-        raise HTTPException(status_code=500, detail="Internal error processing the request.")
-
+        print(f"Error calling Gemini: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Internal error processing the request: {str(e)}")
+        
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
