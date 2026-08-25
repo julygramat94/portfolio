@@ -11,9 +11,9 @@ app = FastAPI()
 # =========================================================================
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://julygramat94.github.io"],  # <-- Asegúrate de que esté esto exacto
+    allow_origins=["https://julygramat94.github.io"],  # Tu dominio oficial
     allow_credentials=True,
-    allow_methods=["*"],  # Cambia esto temporalmente a ["*"] para evitar bloqueos de métodos preflight (OPTIONS)
+    allow_methods=["GET", "POST", "OPTIONS"],          # Importante incluir OPTIONS para las peticiones de preflight
     allow_headers=["*"],
 )
 
