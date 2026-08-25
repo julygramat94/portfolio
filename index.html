@@ -436,7 +436,7 @@
                 <div class="message ai-msg">¡Hola! Soy el asistente virtual de Juliette. Pregúntame sobre su experiencia, código en Stata, proyectos o trayectoria docente.</div>
             </div>
             <div id="chat-input-area">
-                <input type="text" id="chat-input" placeholder="Escribe tu consulta..." onkeypress="handleKeyPress(event)">
+                <input type="text" id="chat-input" placeholder="Escribe tu consulta..." maxlength="300" onkeypress="handleKeyPress(event)">
                 <button id="chat-send" onclick="sendMessage()">Enviar</button>
             </div>
         </div>
@@ -482,8 +482,8 @@
             input.value = '';
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
-            // URL del backend (ajustar cuando subas tu backend a Render/Railway)
-            const backendUrl = 'http://localhost:8000/api/chat';
+            // ⚠️ REEMPLAZA ESTA URL CON TU URL REAL DE GOOGLE CLOUD RUN
+            const backendUrl = 'https://portfolio-backend-1086278946922.us-central1.run.app';
 
             try {
                 const response = await fetch(backendUrl, {
@@ -499,7 +499,7 @@
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
             } catch (error) {
-                messagesContainer.innerHTML += `<div class="message ai-msg">Asegúrate de tener tu backend local encendido para chatear con la IA.</div>`;
+                messagesContainer.innerHTML += `<div class="message ai-msg">Error de conexión con el servidor de IA.</div>`;
                 console.error("Error:", error);
                 messagesContainer.scrollTop = messagesContainer.scrollHeight;
             }
