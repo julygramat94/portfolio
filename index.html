@@ -183,6 +183,31 @@
             padding-bottom: 0.4rem;
         }
 
+        /* Estilos para las preguntas rápidas (chips) */
+        .suggestion-chips {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+        }
+        .chip {
+            background-color: #f1f5f9;
+            color: var(--primary);
+            border: 1px solid #cbd5e1;
+            padding: 7px 10px;
+            border-radius: 6px;
+            font-size: 12.5px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .chip:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
         /* WIDGET DE CHAT FLOTANTE */
         #chat-widget { position: fixed; bottom: 25px; right: 25px; z-index: 1000; font-family: sans-serif; }
         #chat-btn { background: var(--primary); color: white; border: none; border-radius: 50px; padding: 14px 22px; cursor: pointer; font-size: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.25); font-weight: bold; display: flex; align-items: center; gap: 8px; transition: transform 0.2s; }
@@ -425,7 +450,7 @@
         </section>
     </main>
 
-    <!-- WIDGET DE CHAT INTEGRADO CON TU IA -->
+<!-- WIDGET DE CHAT INTEGRADO CON TU IA -->
     <div id="chat-widget">
         <div id="chat-box">
             <div id="chat-header">
@@ -433,7 +458,18 @@
                 <span onclick="toggleChat()" style="cursor: pointer; font-size: 18px;">&times;</span>
             </div>
             <div id="chat-messages">
-                <div class="message ai-msg">¡Hola! Soy el asistente virtual de Juliette. Pregúntame sobre su experiencia, código en Stata, proyectos o trayectoria docente.</div>
+                <div class="message ai-msg">
+                    ¡Hola! Soy el asistente virtual de Juliette. Pregúntame sobre su experiencia, proyectos, trayectoria docente o incluso su vida personal e intereses. 
+                    <br><br>💡 O haz clic en una de estas preguntas rápidas para comenzar:
+                </div>
+                <!-- Preguntas sugeridas por defecto -->
+                <div class="suggestion-chips">
+                    <button class="chip" onclick="sendPresetMessage('Dame un resumen completo de su CV y perfil profesional.')">📄 Resumen del CV</button>
+                    <button class="chip" onclick="sendPresetMessage('¿Cuál es el nivel académico de Juliette, su título, mención y notas?')">🎓 Nivel académico y notas</button>
+                    <button class="chip" onclick="sendPresetMessage('¿Cuál es su experiencia en datos y con IA?')">🤖 Experiencia en Datos e IA</button>
+                    <button class="chip" onclick="sendPresetMessage('¿Qué premios y trayectoria académica tiene en la PUC?')">🏆 Trayectoria en la PUC</button>
+                    <button class="chip" onclick="sendPresetMessage('¿Cuáles son sus hobbies e intereses personales?')">🎨 Hobbies e Intereses</button>
+                </div>
             </div>
             <div id="chat-input-area">
                 <input type="text" id="chat-input" placeholder="Escribe tu consulta..." maxlength="300" onkeypress="handleKeyPress(event)">
