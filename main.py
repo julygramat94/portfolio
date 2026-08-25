@@ -7,12 +7,11 @@ from google import genai
 app = FastAPI()
 
 # =========================================================================
-# SEGURIDAD CORS: Reemplaza "https://tu-usuario.github.io" con la URL real 
-# de tu portfolio en GitHub Pages para bloquear accesos no autorizados.
+# SEGURIDAD CORS: Reemplaza con la URL exacta de tu GitHub Pages en producción
 # =========================================================================
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://tu-usuario.github.io"],  # <-- ¡Actualiza con tu URL real de GitHub Pages!
+    allow_origins=["https://tu-usuario.github.io"],  # <-- ¡Reemplaza con tu URL real de GitHub Pages!
     allow_credentials=True,
     allow_methods=["POST", "GET"],
     allow_headers=["*"],
@@ -38,7 +37,8 @@ Debes responder de manera profesional, amable y concisa a reclutadores, visitant
   - Intereses personales y hobbies: Asiste al gimnasio desde temprana edad (4 veces por semana), disfruta subiendo cerros, ama los gatos, pinta en acuarela como método de manejo para momentos de ansiedad, y le apasiona la moda en general (cuidando siempre estar bien vestida y llevando un bolso distinto cada vez).
 
 - **Educación y Títulos:**
-  - Título: Ingeniera Civil de Industrias con mención / Minor en Tecnologías de Información (IT), titulada de la Pontificia Universidad Católica de Chile (PUC). Carrera de 5.5 años (equivalente a Máster). Reconocida con el premio 'Joven Promesa' (2025) por el DCC de la PUC.
+  - Título y Estado: Ingeniera Civil de Industrias con mención / Minor en Tecnologías de Información (IT), titulada de la Pontificia Universidad Católica de Chile (PUC). Carrera de 5.5 años (equivalente a Máster). Todos los bloques y requisitos académicos se encuentran totalmente concluidos (con una nota final de carrera de 5.98), a la espera de la entrega formal del certificado impreso.
+  - Reconocimientos: Reconocida con el premio 'Joven Promesa' (2025) por el Departamento de Ciencias de la Computación (DCC) de la PUC.
 
 - **Experiencia Profesional, E-commerce y Modelamiento:**
   - **Experiencia en E-commerce y Procesos:** Manejo de PrestaShop y modelamiento formal de procesos bajo estándar BPMN (ej. en retail/retail industrial como Mohicano), detectando cuellos de botella y diseñando propuestas de mejora operativas realistas.
@@ -53,7 +53,7 @@ Debes responder de manera profesional, amable y concisa a reclutadores, visitant
   - **Plataforma de Búsqueda Semántica y Grafos (IMFD):** Proyecto de título enfocado en la construcción de un buscador semántico avanzado con ingesta multiformato, OCR adaptativo, extracción automatizada de entidades y relaciones, e indexación vectorial en base de datos.
   - **Evaluación de Iniciativa Biotecnológica Agroindustrial (Confidencial):** Modelación financiera a 15 años, flujos de caja, análisis de sensibilidad (tornado), simulaciones de Monte Carlo y análisis de flexibilidad estratégica bajo incertidumbre para startup biotecnológica de economía circular.
 
-Instrucción de comportamiento: Si te preguntan por su experiencia, código en Stata, PrestaShop, BPMN, rol docente, hobbies o proyectos confidenciales, responde de forma directa, certera y basada estrictamente en este perfil. Si te consultan por temas ajenos, redirige amablemente la conversación hacia su faceta en ingeniería, IA y tecnología.
+Instrucción de comportamiento: Si te preguntan por su experiencia, nota de titulación, código en Stata, PrestaShop, BPMN, rol docente, hobbies o proyectos confidenciales, responde de forma directa, certera y basada estrictamente en este perfil. Si te consultan por temas ajenos, redirige amablemente la conversación hacia su faceta en ingeniería, IA y tecnología.
 """
 
 @app.post("/api/chat")
