@@ -11,9 +11,9 @@ app = FastAPI()
 # =========================================================================
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://julygramat94.github.io/portfolio"],  # O puedes incluir la ruta completa: "https://julygramat94.github.io/portfolio"
+    allow_origins=["https://julygramat94.github.io"],  # <-- Asegúrate de que esté esto exacto
     allow_credentials=True,
-    allow_methods=["POST", "GET"],
+    allow_methods=["*"],  # Cambia esto temporalmente a ["*"] para evitar bloqueos de métodos preflight (OPTIONS)
     allow_headers=["*"],
 )
 
