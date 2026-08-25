@@ -65,9 +65,9 @@ async def chat_with_ai(request: ChatRequest):
         raise HTTPException(status_code=400, detail="Message cannot be empty.")
     
     try:
-        # Forma directa, limpia y compatible con la nueva SDK de google-genai
+        # Actualizado al modelo correcto que solicitó el entorno
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-3.6-flash',
             contents=cleaned_message,
             config={
                 'system_instruction': SYSTEM_PROMPT,
